@@ -1,0 +1,19 @@
+.inner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: clamp(40rem, 100%, 40rem);
+    padding-right: 10%;
+    
+    
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .inner-header {
+      flex-direction: column;
+    }
+    .inner-header > div {
+      margin-bottom: 0.5rem;
+    }
+  }
+  

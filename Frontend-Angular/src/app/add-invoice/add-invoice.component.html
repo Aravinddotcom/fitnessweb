@@ -1,0 +1,156 @@
+
+<form class="form" #addForm="ngForm" (ngSubmit)="onAddInvoice(addForm)">
+    <div class="title-wrapper">Create task</div>
+    <br>
+    <span class="title-sm mat-h4">To-Do information</span>
+
+    <mat-form-field class="form-field-lg" appearance="outline">
+      <mat-label>Task Name</mat-label>
+      <input matInput name="name" ngModel type="text" required />
+    </mat-form-field>
+  
+    <mat-form-field class="form-field-lg" appearance="outline">
+      <mat-label>User Email</mat-label>
+      <input
+        matInput
+        name="email"
+        ngModel
+        type="email"
+        value="test_email@test.org"
+        required
+      />
+    </mat-form-field>
+  
+    <mat-form-field class="form-field-lg" appearance="outline">
+      <mat-label>Select Category</mat-label>
+      <!-- <input
+        matInput
+        name="address"
+        ngModel
+        type="text"
+        value="66th Hell Cauldron's Way"
+      /> -->
+      <mat-select name="address"
+      ngModel
+      type="text">
+        <mat-option value="Weight Loss">Weight Loss</mat-option>
+        <mat-option value="Weight Gain">Weight Gain</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <div class="space-between m">
+      <mat-form-field class="form-field-sm" appearance="outline">
+        <mat-label>Level</mat-label>
+        <!-- <input matInput name="city" ngModel type="text" value="Boston" /> -->
+        <mat-select name="city"
+        ngModel
+        type="text">
+          <mat-option value="Beginner">Beginner</mat-option>
+          <mat-option value="Intermediate">Intermediate</mat-option>
+          <mat-option value="Advanced">Advanced</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field class="form-field-sm" appearance="outline">
+        <mat-label>Weight (kg)</mat-label>
+        <input
+          matInput
+          type="number"
+          name="code"
+          min="0"
+          ngModel
+          #post_code
+          maxlength="5"
+          placeholder="Ex. 94105"
+          value="94043"
+        />
+        <mat-hint align="end">{{ post_code.value.length }} / 5</mat-hint>
+      </mat-form-field>
+  
+      <mat-form-field class="form-field-sm" appearance="outline">
+        <mat-label>Gender</mat-label>
+        <!-- <input matInput name="country" ngModel type="text" value="MA" /> -->
+        <mat-select name="country"
+        ngModel
+        type="text">
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+        
+      </mat-form-field>
+  
+    </div>
+  
+    <mat-form-field class="form-field-lg" appearance="outline">
+      <mat-label>Task description</mat-label>
+      <textarea matInput name="description" ngModel>
+        Some detailed project description. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, maxime!</textarea
+      >
+    </mat-form-field>
+  
+    <mat-checkbox
+      name="isPaid"
+      ngModel
+      class="checkbox"
+      type="checkbox"
+      color="primary"
+      >Task already completed?</mat-checkbox
+    >
+  
+    <div class="space-between m">
+      <mat-form-field class="date-input" appearance="outline">
+        <mat-label>Set task end date</mat-label>
+        <input type="date"
+          #input
+          matInput
+          name="dueDate"
+          ngModel
+          required
+          /> 
+        
+        <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker> -->
+      </mat-form-field>
+      
+      
+  
+      <mat-form-field class="bill" appearance="outline" floatLabel="always">
+        <mat-label matPrefix
+          ><mat-icon class="icon" aria-hidden="false" aria-label="add icon"
+            >local_fire_department</mat-icon
+          ></mat-label
+        >
+        <mat-label>Calories Burn</mat-label>
+        <input matInput type="number" name="total" min="0" ngModel required
+      /></mat-form-field>
+    </div>
+  
+    <div class="btn-group">
+      <button
+        type="button"
+        
+        class="btn-lg"
+        mat-button
+        color="primary"
+        (click)="sidebar.close()"
+      >
+        Cancel
+      </button>
+      <button
+        mat-raised-button
+        id="submitBtn"
+        type="submit"
+        class="btn-lg"
+        color="primary"
+        (click)="sidebar.close()"
+        [disabled]="addForm.invalid"
+      >
+        <mat-icon class="icon" aria-hidden="false" aria-label="add icon"
+          >add</mat-icon
+        >
+        <span class="mr">ADD</span>
+      </button>
+    </div>
+  </form>
+  

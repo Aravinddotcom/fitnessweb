@@ -1,0 +1,46 @@
+<link rel="stylesheet" 
+          href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="bdy">
+    <section>  
+        <div class="box">  
+            <div class="container">  
+                <div class="form">  
+                    <h2 class="text-center">Welcome</h2>  
+                    <form (ngSubmit)="onSubmit()">  
+                            <div class="input__box">  
+                                <!-- <label class="mb-1"><h6 class="mb-0 text-sm">Username</h6></label> -->
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" class="mb-4" [(ngModel)]="credentials.username" name="username" type="text" matInput placeholder="Username">
+                                <!-- <input type="text" placeholder="Username">   -->
+                            </div>  
+                            <div class="input__box">  
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                                <!-- <label class="mb-1"><h6 class="mb-0 text-sm">Password</h6></label> -->
+                                <input class="mb-4" [(ngModel)]="credentials.password" type="password" name="password"  matInput placeholder="Password" >                                
+                                <!-- <input type="password" placeholder="Password">   -->
+                            </div>  <br>
+                            <div class="input__box text-center">  
+                                <input id="btn" type="submit" value="Login">  
+                            </div>  
+                    </form> 
+                    <h6 class="alert text-center" style="font-family: Verdana;color: #FF565E;">{{msg}} </h6> 
+                    
+
+                    <br>
+                    <h6 class="text-center text-light" 
+                    style="font-family: 'Montserrat';"
+                    (click)="gotoregistration()">New User? Register here</h6>
+                    <!-- <small class="float-right"  [routerLink]="['/registration']">New User ? Register here</small> -->
+                </div>  
+            
+
+            </div>  
+        </div>
+        <!-- <div class="quotes">
+        <p>"Invest for the long haul. Don’t get too greedy and don’t get too scared.”</p>
+        <p style="float: right;padding-right: 5%;color: rgba(83, 255, 80, 0.856);">- Shelby M.C. Davis</p>
+        </div>  -->
+    </section>  
+</div>

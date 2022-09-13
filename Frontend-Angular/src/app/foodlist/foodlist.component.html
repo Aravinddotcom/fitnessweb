@@ -1,0 +1,70 @@
+
+<br>
+<div class="container">
+  <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+  style="background-color: #e0e0e0;">
+  <div>
+    <img src="assets/images/calnew.webp" width="400px">
+    <h1 style="float: left; padding-top:60px;font-size: 1.5em;padding-left: 60px;font-family: Inter;"> 
+        <h1 style="color:#6dc77a;text-align:left;font-size: 2em;">High Calories!</h1>
+        Checkout Food List</h1>
+    </div><br>
+    <strong class="text-danger" style="margin-right: 970px;font-size: 1em;">NOTE</strong>
+    <p  style="margin-right: 80px;">A calorie is simply the measure of energy and keeps their bodies functioning.
+      i.e. 2,000 calories a day for women and 2,500 for men.
+    </p>
+
+
+    <table class="table table-hover" style="table-layout:fixed; 
+    width: 100%;">
+      <thead class="text-center">
+      <tr style="background-color:#63666A;color: #FFFFFF;
+      font-family: Inter;">
+        <th scope="col">Food ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price(₹)</th>
+        <th scope="col">Calories(kcal)</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngIf="foods.length ==0">
+        <td colspan="5" style="text-align: center"><h5>Food Loading...</h5></td>
+      </tr>
+      <tr *ngFor="let food of foods">
+        <th >{{food.id}}</th>
+        <td>{{food.name}}</td>
+        <td style="white-space: nowrap;
+        overflow: hidden;">{{food.desc}}</td>
+        <td>{{food.price}}</td>
+        <td>{{food.protein}}</td>
+        <td>
+          <i class="fa fa-pencil fa-1x"  (click)="goToUpdateFood(food.id)"ngbTooltip="Edit"
+          style="color: #007bff;font-size: 20px;"></i>&nbsp;&nbsp;
+          <i class=" fa fa-trash fa-1x" (click)="deleteFood(food.id)"ngbTooltip="Delete"style="color: #FF565E;font-size: 20px;"></i>&nbsp;&nbsp;
+          <i class="fa fa-chevron-circle-right"(click)="goToViewFood(food.id)"ngbTooltip="View"style="color: #3ED598;font-size: 20px;"></i>&nbsp;
+        </td>
+      </tr>
+      
+    
+      </tbody>
+    </table>
+
+      <button type="button" class="btn btn-lg btn-outline-primary" (click)="goToAddFood()"
+      style="margin-left: 500px;">Add</button>
+      <br>
+      <br>
+      <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+      style="color: #FFFFFF;  background: linear-gradient(to right, #2f2b68 0%, #28265c 100%);">
+      
+          <h1 style="font-size: 1.8em;">Total Calories Content:
+              <span style="font-family: 'Inter'">{{getTotal()}}kcal</span>
+          </h1>
+          <p><button style="border-radius: 12px" routerLink="/dietproduct" class="accent">
+              <i class="fa fa-sign-out">&nbsp;&nbsp;</i>Diet Product</button></p>
+     
+      </div>
+    </div>
+    </div>
+  

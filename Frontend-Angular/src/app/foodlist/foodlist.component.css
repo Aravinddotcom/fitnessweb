@@ -1,0 +1,27 @@
+h3.h {
+    border: 2px solid blueviolet;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+th:first-of-type {
+    border-top-left-radius: 10px;
+  }
+  th:last-of-type {
+    border-top-right-radius: 10px;
+  }
+
+  .accent {
+    transition-duration: 0.4s;
+    border: none;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    float: auto;
+}
+
+.accent:hover {
+    background-color: #5cbf2a;
+    color: white;
+}

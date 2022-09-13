@@ -1,0 +1,89 @@
+
+
+<div class="container">
+    <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+    style="background-color: #e0e0e0;">
+    
+        <div>
+        <img src="assets/images/asserts.jpg">
+        <h1 style="float: left; padding-top:60px;font-size: 1.5em;padding-left: 60px;font-family: Inter;"> 
+            <h1 style="color:#6dc77a;text-align:left;font-size: 2em;">Hello There!</h1>
+            Manage your Portfolio here</h1>
+        </div>
+
+    <div class="row">
+        <div class="col-md-6 py-5">
+            <h3 class="text-center h"><i class="fa fa-stack-exchange">&nbsp;&nbsp;</i>Available Stock</h3>
+            <div class="part1">
+                <table class="table table-hover"
+                style="background-color: #FFFFFF;">
+                    <thead>
+                        <tr style="background-color:#63666A;color: #FFFFFF;
+                        font-family: Helvetica;">
+                            <th scope="col">Name</th>
+                            <th scope="col">Counts</th>
+                            <th scope="col">Current Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let stock of stockDetailList1">
+                            <td>{{stock.productName}}</td>
+                            <td>{{stock.stockCount}}</td>
+                            <td>₹{{stock.currentPrice}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr class="pb-2">
+        </div>
+        <div class="col-md-6 py-5">
+            <h3 class="text-center h"><i class="fa fa-database">&nbsp;&nbsp;</i> Available Mutual Fund</h3>
+            <div class="part2">
+                
+                <table class="table table-hover">
+                    <thead>
+                        <tr style="background-color:#6dc77a;color: #FFFFFF;
+                        font-family: Helvetica;">
+
+                            <th scope="col">Name</th>
+                            <th scope="col">Counts</th>
+                            <th scope="col">Current Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let mf of mutualFundl">
+                            <td>{{mf.foodName}}</td>
+                            <td>{{mf.mutualFundUnits}}</td>
+                            <td>₹{{mf.currentPrice}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr class="pb-2">
+           
+        </div>
+        </div>
+
+ 
+
+        <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+        style="color: #FFFFFF;  background: linear-gradient(to right, #cc99ff 0%, #6666ff 100%);">
+        
+            <h1 style="font-size: 1.8em;">Your Total Networth :
+                <span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">₹{{balance}}/-</span>
+            </h1>
+            <p><button style="border-radius: 12px" routerLink="/sellasset" class="accent">
+                <i class="fa fa-shopping-cart">&nbsp;&nbsp;</i>Sell Assets</button></p>
+       
+        </div>
+
+  
+
+    </div>
+</div>
+
+
+                    
+
+
+  

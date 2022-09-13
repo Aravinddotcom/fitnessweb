@@ -1,0 +1,59 @@
+<br>
+<div class="container">
+  <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+  style="background-color: #e0e0e0;">
+
+  <h2 style="letter-spacing: 2px; padding-bottom: 10px;"> ADD NEW FOOD</h2>
+
+  <form #addfoodform="ngForm" (ngSubmit)="addFoodformsubmit()">
+    <!-- {{product | json}} -->
+    <div class="form-group">
+      <mat-form-field class="form-field-lg"  appearance="outline">
+        <mat-label for="id">Id:</mat-label>
+        <input matInput  type="text" required [(ngModel)]="food.id" name="id" disabled/>
+      </mat-form-field>
+
+      
+    </div>
+    <div class="form-group">
+      <mat-form-field class="form-field-lg"  appearance="outline">
+        <mat-label for="name">Name:</mat-label>
+        <input matInput type="text"  required [(ngModel)]="food.name" name="name"/>
+      </mat-form-field>
+  
+
+    </div>
+    <div class="form-group">
+      <mat-form-field class="form-field-lg"  appearance="outline">
+        <mat-label for="description">Description:</mat-label>
+        <input matInput type="text" required [(ngModel)]="food.desc" name="description" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field class="form-field-lg"  appearance="outline">
+        <mat-label for="price">Price:</mat-label>
+        <input matInput type="text"  required [(ngModel)]="food.price" name="price" />
+      </mat-form-field>
+
+    </div>
+    <div class="form-group">
+      <mat-form-field class="form-field-lg"  appearance="outline">
+        <mat-label for="protein">Calories:</mat-label>
+        <input matInput type="text" required [(ngModel)]="food.protein" name="protein"/>
+      </mat-form-field>
+ 
+    </div>
+
+    <div class="container" style="margin-left: 400px;">
+      <div class="row">
+      <button type="submit" class="btn btn-lg btn-outline-success"
+      [disabled]="addfoodform.form.invalid"
+      >Submit</button> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; 
+      <button type="submit" class="btn btn-lg btn-outline-dark" (click)="gotolist()">Back</button>
+    </div>  
+  </div>
+    </form>
+  </div>
+  </div>
+

@@ -1,0 +1,198 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  body {
+    background: #FFF;
+    
+  } 
+  .bdy {  
+    overflow: hidden;  
+    background-image: url("/assets/images/2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 105%;
+   
+    /* background-position:center; */
+}  
+section {  
+    display: flex;  
+    min-height: 100vh;  
+    align-items:center;  
+    justify-content: right;  
+    margin-right: 15%;
+    margin-bottom: 15%;
+    
+} 
+  .container {
+    position: absolute;
+    max-width: 800px;
+    height: 600px;
+    margin: auto;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    
+    
+  } 
+  .myRightCtn {
+    position: relative;
+    background-image: linear-gradient(45deg, #28313B, #485461);
+    
+    
+    border-radius: 25px;
+    border: 1px solid ;
+    
+    height: 100%;
+    padding: 25px;
+    color: rgb(192, 192, 192);
+    font-size: 12px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+    
+ 
+  .myLeftCtn {
+    position: relative;
+    background: #fff;
+    border-radius: 25px;
+    height: 100%;
+    padding: 25px;
+    padding-left: 50px;
+  }
+  .myLeftCtn header {
+    color: #28313B;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    
+  }
+  .row{
+  height: 100%;
+  } 
+  .myCard {
+    position: relative;
+    background: #FFF;
+    height: 100%;
+    
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+  } 
+  .myRightCtn header {
+    color: #fff;
+    font-size: 44px;
+  }
+  .box {
+    position: relative;
+    margin: 20px;
+    margin-bottom: 100px;
+    
+  } 
+ 
+  .myLeftCtn .myInput:focus {
+    outline: none;
+  } 
+  
+  .myLeftCtn .butt {
+    background: linear-gradient(45deg,  #28313B, #485461);
+    color: #fff;
+    width: 230px;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+  } 
+  .myLeftCtn .butt:hover {
+    background: linear-gradient(45deg, #4CAF50, #50a753);
+  }
+  .myLeftCtn .butt:focus {
+    outline: none;
+  } 
+  .myLeftCtn .fas {
+    position: relative;
+    color: #28313B;
+    left: 36px;
+  } 
+  .butt_out {
+    background: transparent;
+    color: #fff;
+    width: 120px;
+    border: 2px solid#fff;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-left: 80px;
+    -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+  } 
+  .butt_out:hover {
+    border: 2px solid#28313B;
+  } 
+  .butt_out:focus {
+    outline: none;
+  }
+  .myForm {
+    position: relative;
+    margin-top: 50px;
+  } 
+  /* .form{
+    width: 100%;  
+    height: 100%;  
+    padding: 40px;  
+    position: relative;  
+  } */
+
+  .myForm .form-group {  
+    width: 100%;  
+    margin-top: 20px;
+    
+}  
+
+.fa {
+    position: absolute;
+    left: 15px;
+    margin-top: 15px;
+    color: #28313B;
+    
+    
+}
+
+.myForm .form-group .myInput{
+    width: 100%;  
+    border: none;  
+    outline: none;  
+    font-size: 16px;  
+    padding: 10px 40px;  
+    margin-bottom: 3px;
+    letter-spacing: 1px;  
+    border-radius: 35px;  
+    background: rgba(255, 255, 255, 0.2);  
+    border: 1px solid rgba(255, 255, 255, 0.5);  
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  
+    border-right: 1px solid rgba(255, 255, 255, 0.2);  
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);  
+  } 
+  .myLeftCtn .myInput {
+    display: inline; 
+    /* width: 100%; */
+   
+    border-radius: 25px;
+    padding: 10px;
+    padding-left: 50px;
+    border: none;
+    
+  }
+  
+  
+
+  

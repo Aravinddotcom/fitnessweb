@@ -1,0 +1,103 @@
+<div class="container">
+    <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+    style="background-color: #e0e0e0;">
+
+    <div class="row">
+        <!-- <img src="assets/images/diet.jpg" width="500px" alt="loading"> -->
+        <div class="col-md-6">
+            <div class="py-4">
+        <h1 style="float: left; padding-top:60px;font-size: 1.5em;padding-left: 60px;font-family: Inter;"> 
+            <h1 style="color:#6dc77a;text-align:left;font-size: 2em;margin-left:30px ;">Welcome!</h1>
+            Checkout protein & calories food</h1>
+            </div>
+            </div>
+            <div class="col-md-6">
+                <div class="py-4">
+            <img src="assets/images/cal.webp" width="500px" alt="loading">
+        </div>
+    </div>    
+        </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="py-4">
+                <h3 class="text-center h"><mat-icon> local_dining</mat-icon>&nbsp;&nbsp;Rich Protein Products</h3>
+                <table class="table table-hover">
+                    <thead class="text-center">
+                        <tr style="background-color:#63666A;color: #FFFFFF;
+                        font-family: Helvetica;">
+                            <th scope="col">Name</th>
+                            <th scope="col">Protein</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr *ngFor="let stock of allStock">
+                            <td>{{stock.productName}}</td>
+                            <td>{{stock.proteinValue}} g</td>
+                        </tr>
+                        <td></td>
+                        <td style="letter-spacing:2px;"><strong>Total :</strong> {{ getTotal() }} g</td>
+                        <td></td> 
+                    </tbody>
+                </table>
+              
+                <button
+                mat-raised-button
+                id="submitBtn"
+                 type="submit"
+                class="btn-lg"
+                 color="primary"
+                 [routerLink]="['/productlist']">
+        <mat-icon class="icon" aria-hidden="false" aria-label="add icon"
+          >add</mat-icon>
+        <span class="mr">ADD </span></button>
+                
+    
+                  
+                
+                
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="py-4">
+                <h3 class="text-center h"><span class="material-icons">local_fire_department</span>&nbsp;Rich Calories Food</h3>
+                <table class="table table-hover">
+                    <thead class="text-center">
+                        <tr style="background-color:#6dc77a;color: #FFFFFF;
+                        font-family: Helvetica;">
+
+                            <th scope="col">Name</th>
+                            <th scope="col">Calories</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr *ngFor="let mf of allMutualFund">
+                            <td>{{mf.foodName}}</td>
+                            <td>{{mf.caloriesValue}} kcal</td>
+                        </tr>
+                            <td></td>
+                            <td style="letter-spacing:2px;"><strong>Total :</strong>  {{ getTotalKcal() }} kcal</td>
+                            <td></td>
+                       
+                        
+                    </tbody>
+                </table>
+                <button
+                mat-raised-button
+                id="submitBtn"
+                 type="submit"
+                class="btn-lg"
+                 color="primary"
+                 [routerLink]="['/foodlist']">
+        <mat-icon class="icon" aria-hidden="false" aria-label="add icon"
+          >add</mat-icon>
+        <span class="mr">ADD </span></button>
+
+            </div>
+            <!-- <div class="text-center">
+                <p><button routerLink="/dashboard" class="accent">back</button></p>
+            </div> -->
+        </div>
+    </div>
+    </div>
+</div>

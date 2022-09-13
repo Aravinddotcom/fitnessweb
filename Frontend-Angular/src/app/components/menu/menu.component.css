@@ -1,0 +1,36 @@
+/* .example-spacer {
+    flex: 1 1 auto;
+}  */
+
+/* a:first-child {
+    float: left;
+    padding-top: 80px;
+    margin-left: 11%;
+    line-height: 1em;
+}   */
+
+  a {
+    line-height: 1.3em;
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+    /* background-color: #6dc77a; */
+}     */
+        
+        * {
+            /* background-color: #5b57f2; */
+            display: block; 
+           
+        }
+        
+        .navbar-nav .nav-item {
+            margin-left: 50%;
+            
+        }
+
+        .navbar-nav item  {
+            margin-left: 1%;
+        }
+
+   

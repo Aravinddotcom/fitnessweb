@@ -1,0 +1,105 @@
+<div class="bdy">
+    <div class="container">
+
+        <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+        style="background-color: #e0e0e0;">
+
+        <div>
+            <img src="assets/images/8432.jpg" width="350px" height="300px">
+            <h1 style="float: left; padding-top:60px;font-size: 1.5em;padding-left: 60px;font-family: Inter;"> 
+                <h1 style="color:#6dc77a;text-align:left;font-size: 2em;">Selling Market</h1>
+                Time to sell stocks & funds</h1>
+            </div>
+    
+        </div>
+        <div class="box1"> 
+            <div class="row">
+         
+                <div class="col-md-6">
+                    <div class="box1-1">
+
+                        <h1 style="text-align: center;"><i class="fa fa-stack-exchange">&nbsp;</i>Stock List </h1>
+                        <table class="table table-sm table-bordered">
+                            <tr class="text" style="background-color:rgb(236, 173, 173)">
+                                <th class="col">Check</th>
+                                <th class="col">Asset</th>
+                                <th class="col">Unit</th>
+                                <th class="col">Price</th>
+                                <th class="col">Sell Unit</th>
+                            </tr>     
+                            
+                            
+                        </table>
+                        <div class="tb">
+                        <app-vieweachstock *ngFor="let stock of stockDetailList1" [stock]="stock" (removeEvent)="remove($event)" (addEvent)="add($event)"></app-vieweachstock>
+                    </div>
+                    </div>
+                </div>
+
+
+                
+                <div class="col-md-6">
+                    <div class="box1-2">
+                        <h1 style="text-align: center;"><i class="fa fa-database">&nbsp;&nbsp;</i>Mutual Fund List </h1>
+                        <table class="table table-sm table-bordered">
+                            <tr class="text-center" style="background-color:rgb(131, 234, 143)">
+                                <th class= "col">Check</th>
+                                <th class="col">Asset</th>
+                                <th class="col">Unit</th>
+                                <th class="col">Price</th>
+                                <th class="col">Sell Unit</th>
+                            </tr>     
+                                                                          
+                        </table>
+                        <div class="tb">
+                        <app-vieweachmutual *ngFor="let mutualFund of mutualFundl" [mutual]="mutualFund" (removeEvent)="remove($event)" (addEvent)="add($event)"></app-vieweachmutual>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="box2">
+            <h3 class="text-center h">Selected Units</h3>
+            
+            <table class=" text-center table table-sm table-bordered">
+                <tr class="text-center" style="background-color:rgba(206, 143, 255, 0.315)">
+                    <th>Asset Name</th>
+                    <th>Units to be Sold</th>
+                </tr>
+                <tr *ngFor="let asset of saleAsset">
+                    <td>{{asset.assetName}}</td>
+                    <td>{{asset.soldUnits}}</td>
+                </tr>
+            </table>
+            <p class="text-center py-1"><button class="accent btn btn-success" (click)="sellAsset()" mat-raised-button>Sell</button></p>
+            <hr class="pb-2">
+            <div class="status text-center">
+            
+               
+                <!-- <b *ngIf="sell">After Selling Balance is : {{assetSaleResponse.networth}}</b> -->
+
+            
+            <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+        style="color: #FFFFFF;  background: linear-gradient(to right, #cc99ff 0%, #6666ff 100%);">
+        
+        <a *ngIf=" !assetSaleResponse.saleStatus ">
+            <div *ngFor="let item of assetSaleResponse.map | keyvalue ">
+                <span class="text-danger">You have Entered Wrong units for AssetName: <b>{{item.key}}  </b> i.e Units: <b>{{item.value}}</b></span>
+            </div>
+        </a>
+        <a *ngIf="assetSaleResponse.saleStatus ">
+            <h1 class="success"><i class="fa fa-check">&nbsp;</i>Sold Successfully</h1>
+            
+        </a>
+            <p style="font-size: 1.5em; text-align: center;" *ngIf="sell">Updated Networth is :
+                <span style="font-family: Inter">₹ {{assetSaleResponse.networth}}/-</span>
+            </p>
+       
+        </div>
+        </div>
+        </div>
+    
+    </div>
+</div>

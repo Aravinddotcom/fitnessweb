@@ -1,0 +1,97 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<div class="bdy">
+  <section> 
+<div class="container">
+  <div class="myCard">
+<div class = "row">
+
+  <div class = "col-md-6">
+    <div class="myLeftCtn">
+      
+  <form #Registerform="ngForm" (ngSubmit)="registerUser()" class="myForm text-center">
+    <header>Create new account</header>
+      <!-- <small [class.text-danger]="msg.status==500">{{msg.message}}</small> -->
+      <div class="form-group">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <input type="email" class="myInput" name="email" aria-describedby="emailHelp" placeholder="Email" [(ngModel)]="user.emailId" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        #email="ngModel"
+        [class.is-invalid]="email.invalid && email.touched"
+        >
+        <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required field</small> -->
+        <div *ngIf="email.errors && (email.invalid && email.touched)">
+          <small class="text-danger" *ngIf="email.errors?.['required']"
+          >Email Id is required</small>
+          <small class="text-danger"*ngIf="email.errors?.['pattern']">Enter vaild Email</small>
+        </div>
+      </div>
+      
+
+      <div class="form-group">
+          <i class="fa fa-user"></i>
+          <input type="text" class="myInput" name="username" placeholder="Username" [(ngModel)]="user.username" #username="ngModel" required
+          [class.is-invalid]="username.invalid && username.touched"
+          >
+          <small class="text-danger" [class.d-none]="username.valid || username.untouched">User name is required</small>
+    
+        </div>
+      <div class="form-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" class="myInput" name="password" placeholder="Password" [(ngModel)]="user.password" #password="ngModel" required
+        [class.is-invalid]="password.invalid && password.touched"
+        >
+        <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small>
+  
+      </div>
+  
+      <div class="form-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" class="myInput" name="cpassword" placeholder="Confirm password" #cpassword="ngModel"  (ngModel)="user.password" required
+        [class.is-invalid]="cpassword.invalid && cpassword.touched"
+        >
+        <small class="text-danger" [class.d-none]="(cpassword.value== password.value) || cpassword.untouched">Password & Confirm password must be Same</small>
+  
+      </div>
+  
+      <div class="form-group">
+        <label>
+            <input id="check_1" name="check_1"  type="checkbox" required/><small> I read and agree to Terms & Conditions</small>
+            <div class="invalid-feedback">You must check the box.</div>
+        </label>
+    </div>
+  
+      <button [disabled]="Registerform.form.invalid" type="submit" class="butt">CREATE ACCOUNT</button>
+    </form>
+   
+    <div class="text-danger" role="alert">{{msg}}</div>
+    <!-- <small class="float-right" (click)="gototregistration()">New User ? Register here</small> -->
+    <p class="btextual" [routerLink]="['/login']"
+    style="padding-left: 55px;padding-top:20px;">Already have an account?</p>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="myRightCtn">
+          <div class="box"><header style=" font-size: 3em;font-style: italic;
+            padding-left: 50px;
+            margin-bottom: 20px;
+            font-family: 'Roboto Slab';">Sign Up!</header>
+          
+          <p style="font-size: 1.1em; color: rgb(233, 231, 231); text-align: center;font-family: 'Montserrat';">Please enter your details to Sign Up and Be part of our great community.</p>
+          <p style="font-size: 19px; color: rgb(233, 231, 231); text-align: center;font-family: 'Montserrat';font-style: italic; padding-top: 50px;">
+            ❝ You are the best project You ever work on ❞
+          </p>
+              <input type="button" class="butt_out" [routerLink]="['/login']" value="Learn More"/>
+          </div>
+              
+  </div>
+</div>
+</div>
+</div>
+</div>
+</section>  
+</div>
+
+  
+  

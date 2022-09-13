@@ -1,0 +1,35 @@
+version: 0.2
+phases:
+install:
+runtime-versions:
+java: corretto11
+pre_build:
+commands:
+- echo Logging in to Amazon ECR...
+- CODEBUILD_RESOLVED_SOURCE_VERSION="${CODEBUILD_RESOLVED_SOURCE_VERSION:-$IMAGE_TAG}"
+- IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+- echo image_tag $IMAGE_TAG
+- REPO="274201610284.dkr.ecr.ap-south-1.amazonaws.com/authorization-portfolio"
+- IMAGE_URI="$REPO:$IMAGE_TAG"
+- echo Repository $REPO
+- docker login -u AWS -p $(aws ecr get-login-password --region ap-south-1) $REPO
+
+build:
+commands:
+- echo Build started on `date`
+- echo Building the Docker image...
+- docker build -t $REPO:latest .
+- docker tag $REPO:latest $REPO:$IMAGE_TAG
+post_build:
+commands:
+- echo Build completed on `date`
+- echo Pushing the Docker images...
+- docker push $REPO:latest
+- docker push $REPO:$IMAGE_TAG
+- echo Writing image definitions file...
+- printf '[{"name":"authorization-portfolio","imageUri":"%s"}]' $REPO:$IMAGE_TAG > imagedefinitions.json
+- cat imagedefinitions.json
+artifacts:
+files:
+- imagedefinitions.json
+- target/app.jar

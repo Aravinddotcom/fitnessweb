@@ -1,0 +1,72 @@
+
+<br>
+<div class="container">
+  <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+  style="background-color: #e0e0e0;">
+  <div>
+    <img src="assets/images/p.jpg" width="600px">
+    <h1 style="float: left; padding-top:60px;font-size: 1.5em;padding-left: 60px;font-family: Inter;"> 
+        <h1 style="color:#6dc77a;text-align:left;font-size: 2em;">Welcome!</h1>
+        Checkout Product List</h1>
+    </div><br>
+    <strong class="text-danger" style="margin-right: 970px;font-size: 1em;">NOTE</strong>
+    <p>The current recommended dietary allowance (RDA) for protein is set at 0.36 grams of protein per pound of your body weight (0.8 grams per kg).</p>
+    
+    <table class="table table-hover" style="table-layout:fixed; 
+    width: 100%;">
+      <thead class="text-center">
+      <tr style="background-color:#63666A;color: #FFFFFF;
+      font-family: Inter;">
+        <th scope="col">Product ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price(₹)</th>
+        <th scope="col">Protein(g)</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody >
+      <tr *ngIf="products.length ==0">
+        <td colspan="5" style="text-align: center"><h5> Products Loading...</h5></td>
+      </tr>
+      <tr *ngFor="let product of products">
+        <th >{{product.id}}</th>
+        <td>{{product.name}}</td>
+        <td style="white-space: nowrap;
+        overflow: hidden;">{{product.desc}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.protein}}</td>
+        
+        <td>
+          <i class="fa fa-pencil fa-1x" (click)="goToUpdateProduct(product.id)" ngbTooltip="Edit"
+          style="color: #007bff;font-size: 20px;"></i>&nbsp;&nbsp;
+          <i class="fa fa-trash fa-1x" (click)="deleteProduct(product.id)" ngbTooltip="Delete"style="color: #FF565E;font-size: 20px;"></i>&nbsp;&nbsp;
+          <i class=" fa fa-chevron-circle-right"(click)="goToViewProduct(product.id)"ngbTooltip="View"style="color: #3ED598;font-size: 20px;"></i>&nbsp;
+         
+        </td>
+        
+      </tr>
+      <tr>
+ 
+    </tr>
+    
+      </tbody>
+      
+    </table>
+      <button type="button" class="btn btn-lg btn-outline-primary" (click)="goToAddProduct()"
+      style="margin-left: 500px;">Add</button>
+      <br>
+      <br>
+      <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+      style="color: #FFFFFF;  background: linear-gradient(to right, #2f2b68 0%, #28265c 100%);">
+      
+          <h1 style="font-size: 1.8em;">Total Protein Content:
+              <span style="font-family: 'Inter'">{{getTotal()}}g</span>
+          </h1>
+          <p><button style="border-radius: 12px" routerLink="/dietproduct" class="accent">
+              <i class="fa fa-sign-out">&nbsp;&nbsp;</i>Diet Product</button></p>
+     
+      </div>
+      
+   
+    </div>

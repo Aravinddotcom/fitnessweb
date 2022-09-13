@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://rsms.me/inter/inter.css');
+@import "./utilities.css";
+
+:root {
+    --primary: #3f51b5;
+    --primaryLight: #acb4da;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+html,
+body {
+    height: 100%;
+    
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif,'Inter';
+    color: var(--primary);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt {
+    margin-top: 20px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+ 

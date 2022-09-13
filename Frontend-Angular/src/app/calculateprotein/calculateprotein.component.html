@@ -1,0 +1,281 @@
+<br>
+<div class="container">
+  <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+  style="background-color: #e0e0e0;">
+
+  <div class="row">
+    <!-- <img src="assets/images/diet.jpg" width="500px" alt="loading"> -->
+    <div class="col-md-6">
+        <div class="py-4">
+    <h1 style="float: left; padding-top:60px;font-size: 1.5em;padding-left: 60px;font-family: Inter;"> 
+        <h1 style="color:#6dc77a;text-align:left;font-size: 2em;margin-left:30px ;">Protein Calculator</h1>
+        Checkout your protein need per day</h1> <span style="color:#535353;font-size: 1.4em;">How much protein do you need?</span>
+        </div>
+        </div>
+        <div class="col-md-6">
+            <div class="py-4">
+        <img src="assets/images/protein.webp" width="500px" alt="loading">
+    </div>
+</div>    
+    </div>
+
+
+      <!-- <div class="card" style="width: 18rem;">
+        <img src="assets/images/eco.jpg" >
+        <div class="card-body">
+          <h5 class="card-title">Ectomorph (Skinny)</h5>
+          <p class="card-text">
+            Ectomorph is a body as tall and slim, with narrow shoulders and a low muscle mass.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div> -->
+      <div class="side">
+      <div class="row" >
+      <div class="col-lg-4">
+        <div class="card1 pb-0">
+          <div class="card" style="width: 18rem;">
+          <div class="product">
+            <div class="imgbox"> <img src="assets/images/eco.jpg" > </div>
+            <div class="specifies" >
+             <h5 class="card-title" >Ectomorph (Skinny)</h5>
+          
+          <p class="card-text">
+            <br>
+            Ectomorph is a body as tall and slim, with narrow shoulders and a low muscle mass.
+          </p>
+            <button class="btn btn-primary" (click)="open(content1)">Calculate</button>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="col-lg-4">
+  <div class="card1 pb-0">
+<div class="card" style="width: 18rem;">
+<div class="product">
+  <div class="imgbox"> <img src="assets/images/meso.jpg" > </div>
+  <div class="specifies">
+    <h5 class="card-title">Mesomorph (Skinny Fat)</h5>
+    <p class="card-text">
+      <br>
+      Mesomorph is a human that is marked by greater than average muscular development
+    </p>
+      <button class="btn btn-primary" (click)="open(content2)">Calculate</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4">
+  <div class="card1 pb-0">
+<div class="card" style="width: 18rem;">
+<div class="product">
+  <div class="imgbox"> <img src="assets/images/endo.jpg" > </div>
+  <div class="specifies">
+    <h5 class="card-title">Endomorph (Fat)</h5>
+    <p class="card-text">
+      <br>
+      Endomorphs is a body have a higher percentage of body fat and less muscle mass
+    </p>
+      <button class="btn btn-primary" (click)="open(content3)">Calculate</button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+</div>
+
+
+<div class="card1 pb-0" style="padding-top: 10%;">
+  <div class="card" style="width: 18rem;left: 370px;">
+  <div class="product">
+    <div class="imgbox"> <img src="assets/images/calc.png"> </div>
+    <div class="specifies" >
+     <h5 class="card-title" >Calorie Calculator</h5>
+  
+  <p class="card-text">
+    Use the calorie calculator to estimate the number of daily calories your body needs to maintain your current weight.
+  </p>
+    <button class="btn btn-primary" (click)="open(content4)">Calculate</button>
+</div>
+</div>
+</div>
+</div>
+
+<img src="/assets/images/rda.png" >
+
+<div class="card-body text-center rounded shadow p-3 mb-5 bg-body">
+<p style="text-align: justify;
+          text-justify: inter-word;">
+It is important to remember that not every day is the same. Some days, you will need more protein than others. These numbers are an average estimate of your specific daily needs. For example, on a day where you watch a lot of Netflix, you will likely need less protein than on a day you workout, go for a hike, work on the yard, etc. The difference in protein intake between days you work out and days you don’t can often be met with a protein shake immediately after your workout.
+</p></div>
+</div>
+
+
+<ng-template #content1 let-modal let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Protein Calculator</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <label for="dateOfBirth">Ectomorph</label>
+          <div class="input-group">
+            <mat-form-field class="form-field-lg"  appearance="outline">
+              <mat-label>Enter your weight</mat-label>
+              <input matInput type="number" [(ngModel)]="protein.weight" name="b1" min="0" required />
+            </mat-form-field>
+            <i class="fa fa-times" aria-hidden="true" style="padding-left: 5px; padding-right: 5px; margin-top: 20px;"></i>
+
+<mat-form-field class="form-field-sm"  appearance="outline">
+  <mat-label>Protein intake</mat-label>
+  <input matInput type="number" [(ngModel)]="protein.a" name="b2" (ngModelChange)="calculate()" disabled />
+</mat-form-field>
+
+<i class="fa fa-times" aria-hidden="true" style="padding-left: 5px; padding-right: 5px; margin-top: 20px;"></i>
+<mat-form-field class="form-field-sm"  appearance="outline">
+  <mat-label>Mildly active</mat-label>
+  <input matInput type="text" [(ngModel)]="protein.b" name="b3" (ngModelChange)="calculate()" disabled />
+</mat-form-field>
+<h3>Results Calculated</h3>
+<p> (please record results, data is not saved)<p>
+<h5>Protein need on average<span style="color: #6dc77a;"> {{calculate() }} g (per/day)</span></h5>
+            
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="gotorefresh()">Back</button>
+    </div>
+  </ng-template>
+
+  <ng-template #content2 let-modal let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Protein Calculator</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <label for="dateOfBirth">Mesomorph</label>
+          <div class="input-group">
+            <mat-form-field class="form-field-lg"  appearance="outline">
+              <mat-label>Enter your weight</mat-label>
+              <input matInput type="number" [(ngModel)]="protein1.weight" name="b1"  />
+            </mat-form-field>
+
+
+            <i class="fa fa-times" aria-hidden="true" style="padding-left: 5px; padding-right: 5px; margin-top: 20px;"></i>
+            <mat-form-field class="form-field-sm"  appearance="outline">
+              <mat-label>Protein intake</mat-label>
+              <input matInput  type="number" [(ngModel)]="protein1.a" name="b2" (ngModelChange)="calculate1()" disabled />
+            </mat-form-field>
+
+            <i class="fa fa-times" aria-hidden="true" style="padding-left: 5px; padding-right: 5px; margin-top: 20px;"></i>
+            <mat-form-field class="form-field-sm"  appearance="outline">
+              <mat-label>Mildly active</mat-label>
+              <input matInput type="number" [(ngModel)]="protein1.b" name="b3" (ngModelChange)="calculate1()" disabled />
+            </mat-form-field>
+
+<h3>Results Calculated</h3>
+<p> (please record results, data is not saved)<p>
+<h5>Protein need on average<span style="color: #6dc77a;"> {{calculate1() }} g (per/day)</span></h5>
+            
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="gotorefresh()">Back</button>
+    </div>
+  </ng-template>
+
+  <ng-template #content3 let-modal let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Protein Calculator</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <label for="dateOfBirth">Endomorph</label>
+          <div class="input-group">
+            <mat-form-field class="form-field-lg"  appearance="outline">
+              <mat-label>Enter your weight</mat-label>
+              <input matInput type="number" [(ngModel)]="protein2.weight" name="c1"  />
+            </mat-form-field>
+
+            <i class="fa fa-times" aria-hidden="true" style="padding-left: 200px; padding-right: 200px;  margin-bottom: 20px;"></i>
+            <mat-form-field class="form-field-lg"  appearance="outline">
+              <mat-label>Enter your weight</mat-label>
+              <input matInput type="number" [(ngModel)]="protein2.a" name="c2" (ngModelChange)="calculate2()" disabled />
+            </mat-form-field>
+
+          
+            <h3>Results Calculated</h3>
+<p> (please record results, data is not saved)<p>
+<h5>Protein need on average<span style="color: #6dc77a;"> {{calculate2() }} g (per/day)</span></h5>
+            
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="gotorefresh()">Back</button>
+    </div>
+  </ng-template>
+
+  <ng-template #content4 let-modal let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Calorie Calculator</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <label for="dateOfBirth">Calorie Calculator</label>
+          <div class="input-group">
+            <mat-form-field class="form-field-lg"  appearance="outline">
+              <mat-label>Enter your weight</mat-label>
+              <input matInput type="number" [(ngModel)]="protein3.weight" name="b1" min="0" required />
+            </mat-form-field>
+            <i class="fa fa-times" aria-hidden="true" style="padding-left: 5px; padding-right: 5px; margin-top: 20px;"></i>
+
+<mat-form-field class="form-field-sm"  appearance="outline">
+  <mat-label>Calorie intake</mat-label>
+  <input matInput type="number" [(ngModel)]="protein3.a" name="b2" (ngModelChange)="calculate3()" disabled />
+</mat-form-field>
+
+<i class="fa fa-times" aria-hidden="true" style="padding-left: 5px; padding-right: 5px; margin-top: 20px;"></i>
+<mat-form-field class="form-field-sm"  appearance="outline">
+  <mat-label>Mildly active</mat-label>
+  <input matInput type="text" [(ngModel)]="protein3.b" name="b3" (ngModelChange)="calculate3()" disabled />
+</mat-form-field>
+<h3>Results Calculated</h3>
+<p> (please record results, data is not saved)<p>
+<h5>Calorie need on average<span style="color: #6dc77a;"> {{calculate3() }} kcal (per/day)</span></h5>
+            
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="gotorefresh()">Back</button>
+    </div>
+  </ng-template>
+  
+  
+
+  
+
+  </div>
+  </div>
+  
+

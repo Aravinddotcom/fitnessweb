@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+  style="background-color: #e0e0e0;">
+    <h2 style="letter-spacing: 2px; font-size: 3em;">High Calories Foods</h2>
+    <p style="color: #000;font-family: 'Inter';padding-bottom: 10px;">Here are delicious foods that are high in calories.</p>
+    <h2 style="color: #000; text-align: left;padding-left: 50px;">{{food.id}}. {{food.name}}</h2>
+
+    <div *ngIf= "food.name === 'Homemade Granola'">
+    <img src="assets/images/home.jpg" width="400px" style="margin-right: 250px;padding-top: 20px;">
+    </div>
+
+    <div *ngIf= "food.name === 'Meats'">
+      <img src="assets/images/meat.webp" width="600px" style="margin-right: 250px;padding-top: 20px;">
+      </div>
+      <div *ngIf= "food.name === 'Firm Tofu'">
+        <img src="assets/images/tofu.jpg" width="300px" style="margin-right: 500px;padding-top: 20px;">
+        </div>
+        <div *ngIf= "food.name === 'Fish'">
+          <img src="assets/images/fish.jpg" width="600px" style="margin-right: 350px;padding-top: 20px;">
+          </div>
+          <div *ngIf= "food.name === 'Sweet Potatoes'">
+            <img src="assets/images/sweet.jpg" width="600px" style="margin-right: 350px;padding-top: 20px;">
+            </div>
+    <h3 style="width: 900px;text-align: left; margin-left: 50px;
+    font-family: 'Inter'; font-size: 1.5em;padding-top: 30px;">Description</h3>
+    <p style="color: #000;text-align: justify;width: 900px;margin-left: 50px;
+    font-family: 'Inter'; font-size: 1em;padding-top: 10px;padding-bottom: 10px;">{{food.desc}}</p>
+
+     <div class="card-body rounded shadow p-3 mb-5"
+     style="background: linear-gradient(to right, #fbf5ed 0%, #f7efe0 100%);">
+    <h2 style="text-align:left;margin-left: 50px;">Calories content</h2>
+    <p style="text-align:left;margin-left: 50px;color: #000;letter-spacing: 1.5px;">{{food.name}} provides {{food.protein}} kcal of calories.</p>
+    
+  </div>
+  <button type="button" class="btn btn-success" (click)="gotolist()">Back</button>
+</div>
+  
+   
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+

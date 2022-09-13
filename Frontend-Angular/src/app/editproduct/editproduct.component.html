@@ -1,0 +1,63 @@
+<br>
+<div class="container">
+  <div class="card-body text-center rounded shadow p-3 mb-5 bg-body"
+  style="background-color: #e0e0e0;">
+
+  <h2 style="letter-spacing: 2px; padding-bottom: 10px;"> UPDATE PRODUCT</h2>
+
+    <form #editproductform="ngForm" (ngSubmit)="updateProductformsubmit()">
+  <!--    {{product | json}}-->
+      <div class="form-group">
+        <mat-form-field class="form-field-lg"  appearance="outline">
+          <mat-label for="id">Id:</mat-label>
+          <input matInput type="text"  required [(ngModel)]="productToUpdate.id" name="id" id="id" disabled />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+
+        <mat-form-field class="form-field-lg"  appearance="outline">
+          <mat-label for="name">name:</mat-label>
+          <input matInput type="text" required [(ngModel)]="productToUpdate.name" name="name" id="name"/>
+        </mat-form-field>
+
+      </div>
+
+      <div class="form-group">
+        <mat-form-field class="form-field-lg"  appearance="outline">
+          <mat-label for="description">Description:</mat-label>
+          <textarea matInput type="text" required [(ngModel)]="productToUpdate.desc" name="description" id="description">
+          </textarea>
+        </mat-form-field>
+
+
+      </div>
+      <div class="form-group">
+
+        <mat-form-field class="form-field-lg"  appearance="outline">
+          <mat-label for="price">Price:</mat-label>
+          <input matInput type="text"  required [(ngModel)]="productToUpdate.price" name="price" id="price"/>
+        </mat-form-field>
+
+      </div>
+      <div class="form-group">
+
+        <mat-form-field class="form-field-lg"  appearance="outline">
+          <mat-label for="protein">Protein:</mat-label>
+          <input matInput type="text" class="form-control" required [(ngModel)]="productToUpdate.protein" name="protein" id="protein"/>
+        </mat-form-field>
+        
+
+      </div>
+
+ <div class="container" style="margin-left: 400px;">
+    <div class="row">
+      <button type="submit" class="btn btn-lg btn-outline-success"
+      [disabled]="editproductform.form.invalid">Edit</button>&nbsp;
+      <button type="submit" class="btn btn-lg btn-outline-dark" (click)="gotolist()">Back</button>
+      </div>
+      </div>
+    </form>
+  </div>
+  </div>
+
+
